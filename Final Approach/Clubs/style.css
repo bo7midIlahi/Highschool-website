@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sofadi One', cursive;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    border: 2px solid #000;
+}
+
+section .slide {
+    position: relative;
+    background: #0f0;
+    height: 100%;
+    flex: 1;
+    border-right: 2px solid #000;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+section .slide:last-child {
+    border-right: none;
+}
+
+section .slide:hover {
+    flex-grow: 5;
+    /*he4i hiya li tkabir*/
+}
+
+section .slide:nth-child(1) {
+    background: url('../Clubs/coding.png');
+    background-position: center center;
+}
+
+section .slide:nth-child(2) {
+    background: url('../Clubs/drawing.jpg');
+    background-position: center center;
+}
+
+section .slide:nth-child(3) {
+    background: url('../Clubs/robot.png');
+    background-position: center center;
+}
+
+section .slide .content {
+    position: absolute;
+    bottom: 0;
+    margin: 40px;
+    padding: 30px;
+    background: #000;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0;
+    transform: translateY(100px);
+}
+
+section .slide:hover .content {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0);
+}

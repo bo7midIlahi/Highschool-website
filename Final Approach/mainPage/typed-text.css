@@ -1,0 +1,9 @@
+.type-container {
+    width : auto;
+    height : auto;
+    border: 2px solid rgb(28, 158, 197);
+}
+
+.type {
+    color: rgb(183, 28, 197);
+}

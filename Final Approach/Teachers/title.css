@@ -1,0 +1,40 @@
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    font-size: 10vw;
+}
+
+#title span {
+    animation: animate 3s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+    0% {
+        color: #fff;
+        filter: blur(2px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff;
+    }
+
+    30%,70% {
+        color: #fff;
+        filter: blur(2px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff;
+    }
+
+    100% {
+        color: transparent;
+        border-style: none;
+        filter: blur(2px) hue-rotate(0deg) ;
+    }
+}

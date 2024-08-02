@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HHS's History</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./button.css">
+</head>
+<body>
+    <div class="skw-pages">
+        <div class="skw-page skw-page-1 active">
+          <div class="skw-page__half skw-page__half--left">
+              <div class="skw-page__skewed">
+              <div class="skw-page__content"></div>
+            </div>
+        </div>
+        <div class="skw-page__half skw-page__half--right">
+            <div class="skw-page__skewed">
+                <div class="skw-page__content">
+                    <h2 class="skw-page__heading">How it all begins :</h2>
+                    <p class="skw-page__description">Sooo, to begin with, our teacher was talking to us about html and css and web designs and all that stuff. Then suddenly out of nowhere, he told us that our school has no web site, and yes you're right. HE TALD US TO MAKE ONE !!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="skw-page skw-page-2">
+        <div class="skw-page__half skw-page__half--left">
+            <div class="skw-page__skewed">
+                <div class="skw-page__content">
+                    <h2 class="skw-page__heading">NANIIII ???</h2>
+                    <p class="skw-page__description">You see the pic at the right, we were exactly like that, even some of us said that he's joking.. Turned out he wasn't. Sooo we managed to make it. Building a website is a completely a new concept for us, we made it peace by peace.</p>
+                </div>
+            </div>
+        </div>
+        <div class="skw-page__half skw-page__half--right">
+            <div class="skw-page__skewed">
+                <div class="skw-page__content"></div>
+            </div>
+        </div>
+        </div>
+        <div class="skw-page skw-page-3">
+            <div class="skw-page__half skw-page__half--left">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content"></div>
+                </div>
+            </div>
+            <div class="skw-page__half skw-page__half--right">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content">
+                        <h2 class="skw-page__heading">Let's Dance</h2>
+                        <p class="skw-page__description">Peace by peace, pic by pic, line by line, we managed to build it.. Well, it was a whole year work and i'm not kidding, Mr Akrem ordered us to make it i think in the first weeks of the year.. We published it now, at the year's end</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="skw-page skw-page-4">
+            <div class="skw-page__half skw-page__half--left">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content">
+                        <h2 class="skw-page__heading">A whole new 'Language'</h2>
+                        <p class="skw-page__description">As a 3rd year Computer Science students, we start to learn JavaScript, a language that is used for web design.. A it's a looooong shot. But hey, we're are not some normal students.. nooooo.. we're a team and we beat every challenge we face !!!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skw-page__half skw-page__half--right">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skw-page skw-page-5">
+            <div class="skw-page__half skw-page__half--left">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content"></div>
+                </div>
+            </div>
+            <div class="skw-page__half skw-page__half--right">
+                <div class="skw-page__skewed">
+                    <div class="skw-page__content">
+                        <h2 class="skw-page__heading">Finallllyyy</h2>
+                        <p class="skw-page__description">FYEWH !!! We finally published our project. It's really hard for us as students to make this site your discovering right now, what's more difficult is how we managed between our tests, our studies, our project, our teenagehood, some of us lost some of their family members, BUT INSPITE OF THAT, Y'ALL ARE FASCINATED BY THIS WORK !! </p>
+                        <a id="mainPg" href="/mainPage/index.html"><span>Main Page</span></a>
+                        <a id="teachers" href="#"><span></span><span></span><span></span><span></span>Teachers</a>
+                        <a id="creators" href="#">Creators</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function() {
+
+        var curPage = 1;
+        var numOfPages = $(".skw-page").length;
+        var animTime = 1000;
+        var scrolling = false;
+        var pgPrefix = ".skw-page-";
+
+        function pagination() {
+            scrolling = true;
+
+            $(pgPrefix + curPage).removeClass("inactive").addClass("active");
+            $(pgPrefix + (curPage - 1)).addClass("inactive");
+            $(pgPrefix + (curPage + 1)).removeClass("active");
+
+            setTimeout(function() {
+                scrolling = false;
+            }, animTime);
+        };
+
+        function navigateUp() {
+            if (curPage === 1) return;
+            curPage--;
+            pagination();
+        };
+
+        function navigateDown() {
+            if (curPage === numOfPages) return;
+            curPage++;
+            pagination();
+        };
+
+        $(document).on("mousewheel DOMMouseScroll", function(e) {
+        if (scrolling) return;
+        if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+            navigateUp();
+        } else { 
+            navigateDown();
+        }
+        });
+
+        $(document).on("keydown", function(e) {
+            if (scrolling) return;
+            if (e.which === 38) {
+                navigateUp();
+            } else if (e.which === 40) {
+                navigateDown();
+            }
+        });
+
+        });
+    </script>
+    
+</body>
+</html>

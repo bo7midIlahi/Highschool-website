@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Ramaraja&display=swap');
+
+header {
+    margin-bottom: 100px;
+    background: rgb(28, 158, 197);
+    color: rgb(183, 28, 197);
+    text-align: center;
+    height: 10rem;
+    max-height: 10rem;
+    font-family: 'Ramaraja', serif;
+}
+
+.nav-1 nav {
+    background: rgb(28, 158, 197);
+    box-shadow: rgb(183, 28, 197) 0px 20px 50px -10px;
+    backdrop-filter: blur(4px);
+    border: 1.5px solid rgb(183, 28, 197);
+    padding: 50px;
+}
+
+.nav-1 .item {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    padding-top: 15px;
+    margin-left: 20px;
+    margin-right: 35px;
+    background: transparent;
+    z-index: 2;
+    color: rgb(183, 28, 197);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s case-in-out;
+
+}
+
+.nav-1 .item .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-1 .item:hover .linktext:before {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    transform: scale(0.7);
+}
+
+.nav-1 .linktext {
+    font-size: 1.3em;
+    width: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: rgb(183, 28, 197);
+    text-decoration: none;
+    font-family: 'Ramaraja', serif;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-1 .item .linktext:before {
+    content: '';
+    transform: scale(0.2);
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: -55.5px;
+    left: -14px;
+    height: 100px;
+    width: 100px;
+    background: none;
+    border-radius: 100px;
+    border-top: 15px solid rgb(183, 28, 197);
+    border-bottom: 15px solid rgb(183, 28, 197);
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+}
+
+.nav-1 .item:hover .linktext:not(.logo) {
+    color: rgb(183, 28, 197);
+    transform: scale(1.3);
+}
